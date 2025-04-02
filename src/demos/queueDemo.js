@@ -2,6 +2,9 @@ import { Queue } from '../dataStructures/queue.js';
 import { display } from '../utils/display.js';
 
 export function runQueueDemo() {
+  // Clear previous output
+  document.getElementById('output').innerHTML = '';
+  
   display('=== Queue Demo ===');
   
   const queue = new Queue();

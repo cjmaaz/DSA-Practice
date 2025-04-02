@@ -2,6 +2,9 @@ import { Stack } from '../dataStructures/stack.js';
 import { display } from '../utils/display.js';
 
 export function runStackDemo() {
+  // Clear previous output
+  document.getElementById('output').innerHTML = '';
+  
   display('=== Stack Demo ===');
   
   const stack = new Stack();

@@ -2,6 +2,9 @@
   "name": "vite-starter",
   "private": true,
   "version": "0.0.0",
+  "author": {
+    "name": "Maaz"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,5 +13,6 @@
   },
   "devDependencies": {
     "vite": "^6.2.2"
-  }
+  },
+  "license": "MIT"
 }

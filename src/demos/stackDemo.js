@@ -1,11 +1,9 @@
 import { Stack } from '../dataStructures/stack.js';
 import { display } from '../utils/display.js';
 
-export function runStackDemo() {
-  // Clear previous output
+export function runBasicStackDemo() {
   document.getElementById('output').innerHTML = '';
-  
-  display('=== Stack Demo ===');
+  display('=== Basic Stack Demo ===');
   
   const stack = new Stack();
   
@@ -29,4 +27,45 @@ export function runStackDemo() {
   stack.clear();
   
   display('Is stack empty now? ' + stack.isEmpty());
+}
+
+export function runBracketMatcherDemo() {
+  document.getElementById('output').innerHTML = '';
+  display('=== Bracket Matcher Demo ===');
+  
+  function isValidBrackets(str) {
+    const stack = new Stack();
+    const brackets = {
+      '(': ')',
+      '[': ']',
+      '{': '}'
+    };
+    
+    for (let char of str) {
+      if (brackets[char]) {
+        stack.push(char);
+      } else {
+        if (Object.values(brackets).includes(char)) {
+          const lastOpen = stack.pop();
+          if (brackets[lastOpen] !== char) {
+            return false;
+          }
+        }
+      }
+    }
+    
+    return stack.isEmpty();
+  }
+  
+  const testCases = [
+    '()',
+    '()[]{}',
+    '(]',
+    '([)]',
+    '{[]}'
+  ];
+  
+  testCases.forEach(test => {
+    display(`Testing "${test}": ${isValidBrackets(test)}`);
+  });
 }

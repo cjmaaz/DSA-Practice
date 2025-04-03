@@ -1,15 +1,29 @@
 import './style.css'
 import { display } from './utils/display.js'
-import { runStackDemo } from './demos/stackDemo.js'
-import { runQueueDemo } from './demos/queueDemo.js'
+import { runBasicStackDemo, runBracketMatcherDemo } from './demos/stackDemo.js'
+import { runBasicQueueDemo, runPrinterQueueDemo } from './demos/queueDemo.js'
 
 document.querySelector('#app').innerHTML = `
   <div class="container">
     <div class="sidebar">
       <h2>Data Structures</h2>
       <button id="clearOutput">Clear Output</button>
-      <button id="stackDemo">Stack Demo</button>
-      <button id="queueDemo">Queue Demo</button>
+      
+      <div class="dropdown">
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Stack Demos</button>
+        <div class="dropdown-content">
+          <button id="basicStackDemo">Basic Stack</button>
+          <button id="bracketMatcherDemo">Bracket Matcher</button>
+        </div>
+      </div>
+      
+      <div class="dropdown">
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Queue Demos</button>
+        <div class="dropdown-content">
+          <button id="basicQueueDemo">Basic Queue</button>
+          <button id="printerQueueDemo">Printer Queue</button>
+        </div>
+      </div>
     </div>
     <div class="content">
       <h1>DSA Practice</h1>
@@ -18,14 +32,28 @@ document.querySelector('#app').innerHTML = `
   </div>
 `
 
+// Close dropdowns when clicking outside
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let dropdown of dropdowns) {
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 // Clear output
 document.getElementById('clearOutput').addEventListener('click', () => {
   document.getElementById('output').innerHTML = '';
   display('Output cleared');
 });
 
-// Stack Demo
-document.getElementById('stackDemo').addEventListener('click', runStackDemo);
+// Stack Demos
+document.getElementById('basicStackDemo').addEventListener('click', runBasicStackDemo);
+document.getElementById('bracketMatcherDemo').addEventListener('click', runBracketMatcherDemo);
 
-// Queue Demo
-document.getElementById('queueDemo').addEventListener('click', runQueueDemo);
+// Queue Demos
+document.getElementById('basicQueueDemo').addEventListener('click', runBasicQueueDemo);
+document.getElementById('printerQueueDemo').addEventListener('click', runPrinterQueueDemo);

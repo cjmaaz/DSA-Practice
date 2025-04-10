@@ -1,6 +1,6 @@
 import './style.css'
 import { display } from './utils/display.js'
-import runBasicStackDemo from './demos/stack/basicStack.js'
+import { runBasicStack, runTestBalancedParentheses } from './demos/stackExamplePkg.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -13,6 +13,7 @@ document.querySelector('#app').innerHTML = `
         <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Stack</button>
         <div class="dropdown-content">
           <button id="basicStackDemo">Basic Stack</button>
+          <button id="basicValidParantheses">Basic Valid Parantheses</button>
         </div>
       </div>
     </div>
@@ -40,4 +41,5 @@ document.getElementById('clearOutput').addEventListener('click', () => {
 });
 
 // Stack Demos
-document.getElementById('basicStackDemo').addEventListener('click', runBasicStackDemo);
+document.getElementById('basicStackDemo').addEventListener('click', runBasicStack);
+document.getElementById('basicValidParantheses').addEventListener('click', runTestBalancedParentheses);

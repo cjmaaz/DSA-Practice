@@ -3,28 +3,29 @@ export default class Stack {
   constructor() {
     this.#items = [];
   }
-  push(val) {
-    this.#items.push(val);
+  get isEmpty() {
+    return this.#items.length === 0;
+  }
+  push(item) {
+    this.#items.push(item);
+    return item;
   }
   pop() {
-    if (this.isEmpty()) {
+    if (this.isEmpty) {
       return null;
     }
     return this.#items.pop();
   }
-  isEmpty() {
-    return this.#items.length === 0;
-  }
   peek() {
-    if (this.isEmpty()) {
+    if (this.isEmpty) {
       return null;
     }
     return this.#items[this.#items.length - 1];
   }
   size() {
-    this.#items.length;
+    return this.#items.length;
   }
-  clear() {
-    this.#items = [];
+  toString() {
+    return this.#items.toString();
   }
 }

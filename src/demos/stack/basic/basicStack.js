@@ -1,7 +1,7 @@
 import Stack from "../../../dataStructures/stack";
 import { display } from "../../../utils/display";
 
-export default function runBasicStackDemo() {
+export default function testBasicStack() {
   document.getElementById('output').innerHTML = '';
   display('___ Basic Stack Demo __');
 

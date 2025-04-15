@@ -101,13 +101,13 @@ export default function testBalancedParentheses() {
       const inputArray = input.split('');
       const result = isBalancedParentheses(inputArray);
       if (result === expected) {
-        display(`PASSED for input: ${input}`);
+        display(`PASSED for input: ${input}`, 'pass');
         return display(`Above input is valid parentheses? : ${expected ? 'Yes' : 'No'}`);
       }
-      display(`FAILED for input: ${input}`);
-      return (`Expected: ${expected} ; Result ${result}`);
+      display(`FAILED for input: ${input}`, 'fail');
+      return (`Expected: ${expected} ; Result ${result}`, 'fail');
     } catch (err) {
-      display(`ERROR for input: ${input} - ${err.message}`);
+      display(`ERROR for input: ${input} - ${err.message}`, 'error');
     }
   });
 }

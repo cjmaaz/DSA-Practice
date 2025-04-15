@@ -56,6 +56,18 @@ body {
   border-radius: 4px;
 }
 
+.output-item.fail {
+  background: #6c441f;
+}
+
+.output-item.pass {
+  background: #5a6e36;
+}
+
+.output-item.error {
+  background: crimson;
+}
+
 button {
   width: 100%;
   margin: 0.5rem 0;
@@ -115,20 +127,21 @@ button:hover {
     color: #213547;
     background-color: #ffffff;
   }
-  
-  .sidebar, #output {
+
+  .sidebar,
+  #output {
     background: #f1f1f1;
   }
-  
+
   .output-item {
     background: #ffffff;
     border: 1px solid #e0e0e0;
   }
-  
+
   button {
     background-color: #e0e0e0;
   }
-  
+
   .dropdown-content {
     background-color: #e0e0e0;
   }

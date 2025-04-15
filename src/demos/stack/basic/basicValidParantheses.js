@@ -14,7 +14,8 @@ import { display } from "../../../utils/display";
 
 */
 
-function isBalancedParentheses(n) {
+// * Take 1 : Unoptimized
+function isBalancedParenthesesUnoptimized(n) {
   const stack = new Stack();
   for (let eachSymbol of n) {
     switch (eachSymbol) {
@@ -56,6 +57,28 @@ function isBalancedParentheses(n) {
     return true;
   }
   return false;
+}
+// * Take 1 : Optimized
+function isBalancedParentheses(n) {
+  const stack = new Stack();
+  const map = {
+    "}": "{",
+    "]": "[",
+    ")": "("
+  }
+  for (let eachSymbol of n) {
+    if (eachSymbol === "{" || eachSymbol === "(" || eachSymbol === "[") {
+      stack.push(eachSymbol);
+    } else if (eachSymbol in map) {
+      if (stack.size() === 0 || stack.pop() !== map[eachSymbol]) {
+        return false
+      }
+    } else {
+      // throw new Error("Unknown Character");
+      return false;
+    }
+  }
+  return stack.size() === 0;
 }
 
 export default function testBalancedParentheses() {

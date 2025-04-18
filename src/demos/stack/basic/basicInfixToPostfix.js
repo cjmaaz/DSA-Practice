@@ -1,7 +1,7 @@
 import Stack from "../../../dataStructures/stack";
 import { display } from "../../../utils/display";
 
-function infixToPostfixConverter(n) {
+function infixToPostfixConverterWithoutAssociativity(n) {
   const stack = new Stack();
   const output = [];
   const operators = {
@@ -13,17 +13,17 @@ function infixToPostfixConverter(n) {
   }
   for (let each of n) {
     if (each in operators) {
-      if (stack.isEmpty || operators[stack.peek()] < operators[each]) {
+      if (stack.isEmpty || stack.peek() === "(" || operators[each] > operators[stack.peek()]) {
         stack.push(each);
       } else {
         while (!stack.isEmpty) {
-          if (operators[stack.peek()] > operators[each]) {
+          if (operators[stack.peek()] >= operators[each]) {
             output.push(stack.pop());
           } else {
-            stack.push(each);
             break;
           }
         }
+        stack.push(each);
       }
     } else if (each === "(") {
       stack.push(each);
@@ -34,6 +34,41 @@ function infixToPostfixConverter(n) {
       stack.pop();
     } else {
       output.push(each);
+    }
+  }
+  while (!stack.isEmpty) {
+    output.push(stack.pop());
+  }
+  return output;
+}
+
+function infixToPostfixConverter(n) {
+  const stack = new Stack();
+  const output = [];
+  const opMap = {
+    "+": { precedence: 1, associativity: 'left' },
+    "-": { precedence: 1, associativity: 'left' },
+    "*": { precedence: 2, associativity: 'left' },
+    "/": { precedence: 2, associativity: 'left' },
+    "^": { precedence: 3, associativity: 'right' },
+  }
+
+  for (let curr of n) {
+    if (curr in opMap) {
+      while (!stack.isEmpty && stack.peek() !== "(" && ((opMap[curr].associativity === 'left' && opMap[curr].precedence <= opMap[stack.peek()].precedence) || (opMap[curr].associativity === 'right' && opMap[curr].precedence < opMap[stack.peek()].precedence))) {
+        output.push(stack.pop());
+      }
+      stack.push(curr);
+    } else if (curr === "(") {
+      stack.push(curr);
+    } else if (curr === ")") {
+      let count = 0;
+      while (stack.peek() !== "(" && count < 10000) {
+        output.push(stack.pop())
+      }
+      stack.pop();
+    } else {
+      output.push(curr);
     }
   }
   while (!stack.isEmpty) {

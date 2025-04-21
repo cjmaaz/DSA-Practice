@@ -1,4 +1,4 @@
-import Stack from "../../../dataStructures/stack";
+import Stack from "../../../dataStructures/Stack";
 import { display } from "../../../utils/display";
 
 /*

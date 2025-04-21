@@ -1,6 +1,6 @@
 import './style.css'
 import { display } from './utils/display.js'
-import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression } from './demos/stackExamplePkg.js'
+import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from './demos/stackExamplePkg.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -16,6 +16,7 @@ document.querySelector('#app').innerHTML = `
           <button id="basicValidParantheses">Basic Valid Parantheses</button>
           <button id="basicInfixToPostfix">Basic Infix To Postfix</button>
           <button id="basicEvaluatePostfixExpression">Basic Evaluate Postfix Expression</button>
+          <button id="basicMinStack">Basic Min Stack</button>
         </div>
       </div>
     </div>
@@ -47,3 +48,4 @@ document.getElementById('basicStackDemo').addEventListener('click', runTestBasic
 document.getElementById('basicValidParantheses').addEventListener('click', runTestBalancedParentheses);
 document.getElementById('basicInfixToPostfix').addEventListener('click', runTestInfixToPostfix);
 document.getElementById('basicEvaluatePostfixExpression').addEventListener('click', runTestEvaluatePostfixExpression);
+document.getElementById('basicMinStack').addEventListener('click', runTestMinStack);

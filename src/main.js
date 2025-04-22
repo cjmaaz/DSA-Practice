@@ -1,7 +1,7 @@
 import './style.css'
 import { display } from 'utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
-import { runTestBubbleSort, runTestInsertionSort } from '@/demos/sortExamplePkg.js'
+import { runTestBubbleSort, runTestInsertionSort, runTestSelectionSort } from '@/demos/sortExamplePkg.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -26,6 +26,7 @@ document.querySelector('#app').innerHTML = `
         <div class="dropdown-content">
           <button id="bubbleSort">Bubble Sort</button>
           <button id="insertionSort">Insertion Sort</button>
+          <button id="selectionSort">Selection Sort</button>
         </div>
       </div>
     </div>
@@ -62,3 +63,4 @@ document.getElementById('basicMinStack').addEventListener('click', runTestMinSta
 // Sorting
 document.getElementById('bubbleSort').addEventListener('click', runTestBubbleSort);
 document.getElementById('insertionSort').addEventListener('click', runTestInsertionSort);
+document.getElementById('selectionSort').addEventListener('click', runTestSelectionSort);

@@ -1,6 +1,7 @@
 import './style.css'
 import { display } from './utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from './demos/stackExamplePkg.js'
+import { runTestBubbleSort } from './demos/sortExamplePkg.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -17,6 +18,13 @@ document.querySelector('#app').innerHTML = `
           <button id="basicInfixToPostfix">Basic Infix To Postfix</button>
           <button id="basicEvaluatePostfixExpression">Basic Evaluate Postfix Expression</button>
           <button id="basicMinStack">Basic Min Stack</button>
+        </div>
+      </div>
+      <!-- Sorting -->
+      <div class="dropdown">
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Sorting</button>
+        <div class="dropdown-content">
+          <button id="bubbleSort">Bubble Sort</button>
         </div>
       </div>
     </div>
@@ -49,3 +57,6 @@ document.getElementById('basicValidParantheses').addEventListener('click', runTe
 document.getElementById('basicInfixToPostfix').addEventListener('click', runTestInfixToPostfix);
 document.getElementById('basicEvaluatePostfixExpression').addEventListener('click', runTestEvaluatePostfixExpression);
 document.getElementById('basicMinStack').addEventListener('click', runTestMinStack);
+
+// Sorting
+document.getElementById('bubbleSort').addEventListener('click', runTestBubbleSort);

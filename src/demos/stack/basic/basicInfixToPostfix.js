@@ -1,5 +1,5 @@
-import Stack from "../../../dataStructures/Stack";
-import { display } from "../../../utils/display";
+import Stack from "dataStructures/Stack";
+import { display } from "utils/display";
 
 function infixToPostfixConverterWithoutAssociativity(n) {
   const stack = new Stack();

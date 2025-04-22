@@ -1,5 +1,5 @@
 import MinStack from "../MinStack";
-import { display } from "../../../utils/display";
+import { display } from "utils/display";
 
 function utilizeMinStack() {
   let stack = new MinStack();

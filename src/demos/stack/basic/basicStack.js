@@ -1,5 +1,5 @@
-import Stack from "../../../dataStructures/Stack";
-import { display } from "../../../utils/display";
+import Stack from "dataStructures/Stack";
+import { display } from "utils/display";
 
 export default function testBasicStack() {
   document.getElementById('output').innerHTML = '';

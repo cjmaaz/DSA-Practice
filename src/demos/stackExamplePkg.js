@@ -1,8 +1,8 @@
-import testBasicStack from './stack/basic/basicStack';
-import testBalancedParentheses from './stack/basic/basicValidParantheses';
-import testInfixToPostfix from './stack/basic/basicInfixToPostfix';
-import testEvaluatePostfixExpression from './stack/basic/basicEvaluatePostfixExpression';
-import testMinStack from './stack/basic/basicMinStack';
+import testBasicStack from '@/demos/stack/basic/basicStack';
+import testBalancedParentheses from '@/demos/stack/basic/basicValidParantheses';
+import testInfixToPostfix from '@/demos/stack/basic/basicInfixToPostfix';
+import testEvaluatePostfixExpression from '@/demos/stack/basic/basicEvaluatePostfixExpression';
+import testMinStack from '@/demos/stack/basic/basicMinStack';
 
 export function runTestBalancedParentheses() {
   testBalancedParentheses();

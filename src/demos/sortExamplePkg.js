@@ -1,4 +1,4 @@
-import testBubbleSort from "../sortingAlgorithms/bubbleSort";
+import testBubbleSort from "@/sortingAlgorithms/bubbleSort";
 
 
 export function runTestBubbleSort() {

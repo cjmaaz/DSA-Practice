@@ -1,4 +1,4 @@
-import { display } from "../utils/display";
+import { display } from "utils/display";
 
 function bubbleSort(arrList) {
   for (let i = 0; i < arrList.length - 1; i++) {

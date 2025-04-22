@@ -1,7 +1,7 @@
 import './style.css'
-import { display } from './utils/display.js'
-import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from './demos/stackExamplePkg.js'
-import { runTestBubbleSort } from './demos/sortExamplePkg.js'
+import { display } from 'utils/display.js'
+import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
+import { runTestBubbleSort } from '@/demos/sortExamplePkg.js'
 
 
 document.querySelector('#app').innerHTML = `

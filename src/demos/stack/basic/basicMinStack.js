@@ -1,4 +1,4 @@
-import MinStack from "./minStack";
+import MinStack from "../MinStack";
 import { display } from "../../../utils/display";
 
 function utilizeMinStack() {

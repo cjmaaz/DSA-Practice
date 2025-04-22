@@ -1,4 +1,4 @@
-import Stack from "../../../dataStructures/Stack";
+import Stack from '../../../dataStructures/Stack'
 import { display } from "../../../utils/display";
 
 function evaluatePostfixExpressUnoptimized(n) {

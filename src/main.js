@@ -2,6 +2,7 @@ import './style.css'
 import { display } from 'utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
 import { runTestBubbleSort, runTestInsertionSort, runTestSelectionSort } from '@/demos/sortExamplePkg.js'
+import { runTestBinarySearch } from '@/demos/algorithmExamplePkg.js'
 
 
 document.querySelector('#app').innerHTML = `
@@ -27,6 +28,13 @@ document.querySelector('#app').innerHTML = `
           <button id="bubbleSort">Bubble Sort</button>
           <button id="insertionSort">Insertion Sort</button>
           <button id="selectionSort">Selection Sort</button>
+        </div>
+      </div>
+      <!-- Algorithms -->
+      <div class="dropdown">
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Algorithms</button>
+        <div class="dropdown-content">
+          <button id="binarySearch">Binary Search</button>
         </div>
       </div>
     </div>
@@ -64,3 +72,7 @@ document.getElementById('basicMinStack').addEventListener('click', runTestMinSta
 document.getElementById('bubbleSort').addEventListener('click', runTestBubbleSort);
 document.getElementById('insertionSort').addEventListener('click', runTestInsertionSort);
 document.getElementById('selectionSort').addEventListener('click', runTestSelectionSort);
+
+
+// Algorithms
+document.getElementById('binarySearch').addEventListener('click', runTestBinarySearch);

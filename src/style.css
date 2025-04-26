@@ -68,6 +68,10 @@ body {
   background: crimson;
 }
 
+.output-item.info {
+  background: rgb(69, 50, 242);
+}
+
 button {
   width: 100%;
   margin: 0.5rem 0;

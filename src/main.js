@@ -3,6 +3,7 @@ import { display } from 'utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
 import { runTestBubbleSort, runTestInsertionSort, runTestSelectionSort } from '@/demos/sortExamplePkg.js'
 import { runTestBinarySearch } from '@/demos/algorithmExamplePkg.js'
+import { runTestFindFirstTrue } from '@/demos/basicExamplePkg.js';
 
 
 document.querySelector('#app').innerHTML = `
@@ -10,6 +11,13 @@ document.querySelector('#app').innerHTML = `
     <div class="sidebar">
       <h2>Data Structures</h2>
       <button id="clearOutput">Clear Output</button>
+      <!-- Basics -->
+      <div class="dropdown">
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Basics</button>
+        <div class="dropdown-content">
+          <button id="findFirstTrue">Find First True</button>
+        </div>
+      </div>
       <!-- Stack -->
       <div class="dropdown">
         <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Stack</button>
@@ -60,6 +68,9 @@ document.getElementById('clearOutput').addEventListener('click', () => {
   document.getElementById('output').innerHTML = '';
   display('Output cleared');
 });
+
+// Basic
+document.getElementById('findFirstTrue').addEventListener('click', runTestFindFirstTrue);
 
 // Stack Demos
 document.getElementById('basicStackDemo').addEventListener('click', runTestBasicStack);

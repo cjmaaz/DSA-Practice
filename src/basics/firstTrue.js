@@ -1,5 +1,23 @@
 import { display } from "@/utils/display";
 
+
+function findBoundary(arr) {
+  let left = 0;
+  let right = arr.length - 1;
+  let boundaryIndex = -1;
+
+  while (left <= right) {
+    const mid = Math.floor((left + right) / 2);
+    if (arr[mid]) {
+      boundaryIndex = mid;
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return boundaryIndex;
+}
+
 function findFirstTrue(arr) {
   let left = 0;
   let right = arr.length;
@@ -18,7 +36,7 @@ function findFirstTrue(arr) {
 
 export default function testFindFirstTrue() {
   document.getElementById('output').innerHTML = '';
-  display("____First True in a Sorted Boolean Array____");
+  display("____First True in a Sorted Boolean Array / Boundary Index____");
 
   const testCases = [
     // Basic test: sorted boolean array, first true occurs at index 2
@@ -58,7 +76,8 @@ export default function testFindFirstTrue() {
   ];
   testCases.forEach(({ arr, expected, message }) => {
     try {
-      const result = findFirstTrue(arr);
+      // const result = findFirstTrue(arr);
+      const result = findBoundary(arr);
       if (result === expected) {
         display(`PASSED for input: [${arr}]`, 'pass');
         display(`First true index: ${expected}`);

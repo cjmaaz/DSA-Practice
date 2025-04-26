@@ -49,7 +49,35 @@ export default function testFindElementNotSmallerThanTarget() {
     // Two-element array: target 2 in [1,4] returns index 1
     { arr: [1, 4], target: 2, expected: 1 },
     // Target equal to the first element in a simple array
-    { arr: [1, 2, 3, 4, 5], target: 1, expected: 0 }
+    { arr: [1, 2, 3, 4, 5], target: 1, expected: 0 },
+    { arr: [1, 3, 3, 5, 8, 8, 10], target: 2, expected: 1 }, // Example case
+    { arr: [2, 4, 6], target: 2, expected: 0 }, // Target is first element
+    { arr: [1, 3, 5], target: 3, expected: 1 }, // Target is middle element
+    { arr: [5, 5, 5], target: 5, expected: 0 }, // All elements equal to target
+    { arr: [1, 4, 6, 8], target: 5, expected: 2 }, // Target between elements
+    { arr: [5, 6, 7], target: 3, expected: 0 }, // Target smaller than all
+    { arr: [1, 2, 3], target: 3, expected: 2 }, // Target is last element
+    { arr: [1, 2, 2, 2, 3], target: 2, expected: 1 }, // Duplicates around target
+    { arr: [5], target: 5, expected: 0 }, // Single element equal to target
+    { arr: [5], target: 3, expected: 0 }, // Single element larger than target
+    { arr: [1, 3, 3, 3, 5], target: 3, expected: 1 }, // Multiple duplicates
+    { arr: [2, 3, 4, 5], target: 2, expected: 0 }, // First element
+    { arr: [1, 3, 5, 7], target: 5, expected: 2 }, // Even-length middle
+    { arr: [2, 4, 6, 8], target: 4, expected: 1 }, // Even-length first half
+    { arr: [1, 2, 3, 4, 5], target: 3, expected: 2 }, // Odd-length middle
+    { arr: [2, 2], target: 2, expected: 0 }, // Two duplicates
+    { arr: [1, 1, 2, 2, 3], target: 2, expected: 2 }, // First occurrence after smaller elements
+    { arr: [1, 2, 4, 5, 6], target: 3, expected: 2 }, // Target between elements
+    { arr: [3, 4, 5, 6], target: 1, expected: 0 }, // All elements larger
+    { arr: [0, 0, 1, 2, 3], target: 0, expected: 0 }, // Multiple zeros
+    { arr: [10, 20, 30], target: 15, expected: 1 }, // Target in between
+    { arr: [10, 20, 30], target: 25, expected: 2 }, // Target in between higher
+    { arr: [5, 5, 5, 5], target: 5, expected: 0 }, // All elements same as target
+    { arr: [1, 3, 5, 7, 9], target: 6, expected: 3 }, // First >= is 7
+    { arr: [1, 3, 5, 7, 8, 10], target: 9, expected: 5 }, // Target near end
+    { arr: [1, 3, 5, 7, 8, 10], target: 10, expected: 5 }, // Target is last
+    { arr: [10], target: 10, expected: 0 }, // Single element
+    { arr: [1, 4, 5], target: 2, expected: 1 }, // First >= is 4
   ];
   testCases.forEach(({ arr, target, expected }) => {
     try {

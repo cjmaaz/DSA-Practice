@@ -3,7 +3,7 @@ import { display } from 'utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
 import { runTestBubbleSort, runTestInsertionSort, runTestSelectionSort } from '@/demos/sortExamplePkg.js'
 import { runTestBinarySearch } from '@/demos/algorithmExamplePkg.js'
-import { runTestFindFirstTrue, runTestFindElementNotSmallerThanTarget } from '@/demos/basicExamplePkg.js';
+import { runTestFindFirstTrue, runTestFindElementNotSmallerThanTarget, runTestFirstOccurance } from '@/demos/basicExamplePkg.js';
 
 
 document.querySelector('#app').innerHTML = `
@@ -17,6 +17,7 @@ document.querySelector('#app').innerHTML = `
         <div class="dropdown-content">
           <button id="findFirstTrue">Find First True</button>
           <button id="findFirstElementNotSmallerThanTarget">Find First Element Not Smaller Than Target</button>
+          <button id="findFirstOccurance">Find Element in Sorted Array with Duplicates</button>
         </div>
       </div>
       <!-- Stack -->
@@ -73,6 +74,7 @@ document.getElementById('clearOutput').addEventListener('click', () => {
 // Basic
 document.getElementById('findFirstTrue').addEventListener('click', runTestFindFirstTrue);
 document.getElementById('findFirstElementNotSmallerThanTarget').addEventListener('click', runTestFindElementNotSmallerThanTarget);
+document.getElementById('findFirstOccurance').addEventListener('click', runTestFirstOccurance);
 
 // Stack Demos
 document.getElementById('basicStackDemo').addEventListener('click', runTestBasicStack);

@@ -7,7 +7,7 @@ function findBoundary(arr) {
   let boundaryIndex = -1;
 
   while (left <= right) {
-    const mid = Math.floor((left + right) / 2);
+    let mid = left + Math.floor((right - left) / 2);
     if (arr[mid]) {
       boundaryIndex = mid;
       right = mid - 1;

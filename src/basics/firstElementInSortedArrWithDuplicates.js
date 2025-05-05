@@ -1,6 +1,6 @@
 import { display } from "utils/display";
 
-function firstOccurance(arr, target) {
+function firstOccurrence(arr, target) {
   let left = 0;
   let right = arr.length - 1;
   let targetIndex = -1;
@@ -18,9 +18,9 @@ function firstOccurance(arr, target) {
   return targetIndex;
 }
 
-export default function testFirstOccurance() {
+export default function testFirstOccurrence() {
   document.getElementById('output').innerHTML = '';
-  display("____Testing firstOccurance Function____");
+  display("____Testing firstOccurrence Function____");
 
   const testCases = [
     { arr: [1, 3, 3, 3, 3, 6, 10, 10, 10, 100], target: 3, expected: 1 },
@@ -77,7 +77,7 @@ export default function testFirstOccurance() {
   // Run each test case.
   testCases.forEach(({ arr, target, expected }) => {
     try {
-      const result = firstOccurance(arr, target);
+      const result = firstOccurrence(arr, target);
       if (result === expected) {
         display(`PASSED for array: [${arr}] with target: ${target}`, 'pass');
         display(`Result returned: ${result}`);

@@ -3,7 +3,7 @@ import { display } from 'utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
 import { runTestBubbleSort, runTestInsertionSort, runTestSelectionSort } from '@/demos/sortExamplePkg.js'
 import { runTestBinarySearch } from '@/demos/algorithmExamplePkg.js'
-import { runTestFindFirstTrue, runTestFindElementNotSmallerThanTarget, runTestFirstOccurance, runTestFindSquareRoot } from '@/demos/basicExamplePkg.js';
+import { runTestFindFirstTrue, runTestFindElementNotSmallerThanTarget, runTestFirstOccurrence, runTestFindSquareRoot } from '@/demos/basicExamplePkg.js';
 
 
 document.querySelector('#app').innerHTML = `
@@ -17,8 +17,8 @@ document.querySelector('#app').innerHTML = `
         <div class="dropdown-content">
           <button id="findFirstTrue">Find First True</button>
           <button id="findFirstElementNotSmallerThanTarget">Find First Element Not Smaller Than Target</button>
-          <button id="findFirstOccurance">Find Element in Sorted Array with Duplicates</button>
-          <button id="findSqaureRoot">Square Root Estimation Without Builtin Fn</button>
+          <button id="findFirstOccurrence">Find Element in Sorted Array with Duplicates</button>
+          <button id="findSquareRoot">Square Root Estimation Without Builtin Fn</button>
         </div>
       </div>
       <!-- Stack -->
@@ -26,7 +26,7 @@ document.querySelector('#app').innerHTML = `
         <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Stack</button>
         <div class="dropdown-content">
           <button id="basicStackDemo">Basic Stack</button>
-          <button id="basicValidParantheses">Basic Valid Parantheses</button>
+          <button id="basicValidParentheses">Basic Valid Parentheses</button>
           <button id="basicInfixToPostfix">Basic Infix To Postfix</button>
           <button id="basicEvaluatePostfixExpression">Basic Evaluate Postfix Expression</button>
           <button id="basicMinStack">Basic Min Stack</button>
@@ -75,12 +75,12 @@ document.getElementById('clearOutput').addEventListener('click', () => {
 // Basic
 document.getElementById('findFirstTrue').addEventListener('click', runTestFindFirstTrue);
 document.getElementById('findFirstElementNotSmallerThanTarget').addEventListener('click', runTestFindElementNotSmallerThanTarget);
-document.getElementById('findFirstOccurance').addEventListener('click', runTestFirstOccurance);
-document.getElementById('findSqaureRoot').addEventListener('click', runTestFindSquareRoot);
+document.getElementById('findFirstOccurrence').addEventListener('click', runTestFirstOccurrence);
+document.getElementById('findSquareRoot').addEventListener('click', runTestFindSquareRoot);
 
 // Stack Demos
 document.getElementById('basicStackDemo').addEventListener('click', runTestBasicStack);
-document.getElementById('basicValidParantheses').addEventListener('click', runTestBalancedParentheses);
+document.getElementById('basicValidParentheses').addEventListener('click', runTestBalancedParentheses);
 document.getElementById('basicInfixToPostfix').addEventListener('click', runTestInfixToPostfix);
 document.getElementById('basicEvaluatePostfixExpression').addEventListener('click', runTestEvaluatePostfixExpression);
 document.getElementById('basicMinStack').addEventListener('click', runTestMinStack);

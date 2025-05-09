@@ -3,7 +3,8 @@ import { display } from 'utils/display.js'
 import { runTestBasicStack, runTestBalancedParentheses, runTestInfixToPostfix, runTestEvaluatePostfixExpression, runTestMinStack } from '@/demos/stackExamplePkg.js'
 import { runTestBubbleSort, runTestInsertionSort, runTestSelectionSort } from '@/demos/sortExamplePkg.js'
 import { runTestBinarySearch } from '@/demos/algorithmExamplePkg.js'
-import { runTestFindFirstTrue, runTestFindElementNotSmallerThanTarget, runTestFirstOccurrence, runTestFindSquareRoot } from '@/demos/basicExamplePkg.js';
+import { runTestFindFirstTrue, runTestFindElementNotSmallerThanTarget, runTestFirstOccurrence, runTestFindSquareRoot } from '@/demos/binarySearchExamplePkg.js';
+import { runTestRemoveDuplicates } from '@/demos/twoPointerExamplePkg.js';
 
 
 document.querySelector('#app').innerHTML = `
@@ -11,14 +12,21 @@ document.querySelector('#app').innerHTML = `
     <div class="sidebar">
       <h2>Data Structures</h2>
       <button id="clearOutput">Clear Output</button>
-      <!-- Basics -->
+      <!-- Binary Search -->
       <div class="dropdown">
-        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Basics</button>
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Binary Search</button>
         <div class="dropdown-content">
           <button id="findFirstTrue">Find First True</button>
           <button id="findFirstElementNotSmallerThanTarget">Find First Element Not Smaller Than Target</button>
           <button id="findFirstOccurrence">Find Element in Sorted Array with Duplicates</button>
           <button id="findSquareRoot">Square Root Estimation Without Builtin Fn</button>
+        </div>
+      </div>
+      <!-- Two Pointers -->
+      <div class="dropdown">
+        <button onclick="this.nextElementSibling.classList.toggle('show')" class="dropbtn">Two Pointers</button>
+        <div class="dropdown-content">
+          <button id="removeDuplicates">Remove Duplicates</button>
         </div>
       </div>
       <!-- Stack -->
@@ -72,7 +80,10 @@ document.getElementById('clearOutput').addEventListener('click', () => {
   display('Output cleared');
 });
 
-// Basic
+// Two Pointers
+document.getElementById('removeDuplicates').addEventListener('click', runTestRemoveDuplicates);
+
+// Binary Search
 document.getElementById('findFirstTrue').addEventListener('click', runTestFindFirstTrue);
 document.getElementById('findFirstElementNotSmallerThanTarget').addEventListener('click', runTestFindElementNotSmallerThanTarget);
 document.getElementById('findFirstOccurrence').addEventListener('click', runTestFirstOccurrence);
